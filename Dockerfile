@@ -1,14 +1,15 @@
-# Usa a imagem oficial do Nginx como base
-FROM nginx:alpine
+FROM debian:latestbr
 
-# Define o diretório de trabalho dentro do container (onde o Nginx procura os arquivos)
-WORKDIR /usr/share/nginx/html
+RUN apt-get update -y
+RUN apt-get install -y apache2
+RUN apt-get install -y nano
+RUN apt-get -y install systemctl
+RUN systemctl stop apache2
+RUN systemctl start apache2
 
-# Copia todos os arquivos do repositório para o diretório do Nginx
-COPY . .
+RUN rm /var/www/html/index.html
+COPY . /var/www/html
 
-# Expõe a porta 80 (padrão HTTP)
 EXPOSE 80
 
-# Comando para iniciar o Nginx
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
