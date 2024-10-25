@@ -7,11 +7,10 @@ RUN apt-get -y install systemctl
 RUN systemctl stop apache2
 RUN systemctl start apache2
 
-COPY ./apache-conf /etc/apache2/apache2.conf
+COPY apache-conf /etc/apache2/apache2.conf
 RUN rm /var/www/html/index.html
-COPY . /var/www/html
+COPY pagina /var/www/html
 
 EXPOSE 80
 
 CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
-
