@@ -9,39 +9,24 @@
 </head>
 <body>
     <header>
-        <div class="grid-container">
-            <div class="item1">
-                <img src="img/huawei.png" alt="logo">
-            </div>
-            <div class="item2">
-                <p>Huawei Cloud</p>
-            </div>
-            <div class="item3">
-                <ul>
-                    <li><a href="https://auth.huaweicloud.com/authui/login.html?locale=en-us#/login" target="_blank">Log In</a></li>
-                    <li><a href="https://www.huaweicloud.com/intl/en-us/" target="_blank">Home</a></li>
-                    <li><a href="https://support.huaweicloud.com/intl/en-us/" target="_blank">Documentação</a></li>
-                </ul>
-            </div>
-        </div>
+        <img src="img/huawei.png" alt="logo">
+        <ul>
+            <a href="https://auth.huaweicloud.com/authui/login.html?locale=en-us#/login" target="_blank"><li>Log In</li></a>
+            <a href="https://www.huaweicloud.com/intl/en-us/" target="_blank"><li>Home</li></a>
+            <a href="https://support.huaweicloud.com/intl/en-us/" target="_blank"><li>Documentação</li></a>
+        </ul>
     </header>
     <main>
         <div class="container">
             <h1>Portal de acesso da Huawei</h1>
-            <input type="text" id="pesquisa" placeholder="Pesquisar conta..." />
+            <div class="input-wrapper">
+                <input type="text" id="pesquisa" placeholder="Pesquisar conta..." />
+            </div>
             <div class="contas">
                 <ul id="lista-contas"></ul>
             </div>
-
-            <!-- Botão para acessar a conta selecionada -->
-            <div class="botoes">
-                <button id="acessar-btn">Acessar</button>
-            </div>
         </div>
     </main>
-    <footer>
-        <p></p>
-    </footer>
     <script src="js/script.js"></script>
 </body>
 </html>
